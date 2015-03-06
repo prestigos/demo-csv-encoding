@@ -1,7 +1,8 @@
 /*jslint node: true, indent: 2, nomen:true */
 /*global FileReader, document*/
 'use strict';
-var Bacon = require('baconjs').Bacon;
+var Bacon = require('baconjs').Bacon,
+  encoding = require("legacy-encoding");
 
 function someCtrl($scope, $http) {
   var scope = $scope;
@@ -26,7 +27,10 @@ function someCtrl($scope, $http) {
 
     listener = function () {
       return function (x) {
-        contenido = contenido.concat(x.target.result);
+        var resultBuffer;
+
+        resultBuffer = encoding.encode(x.target.result, 'utf-8');
+        contenido = contenido.concat(resultBuffer.toString('utf-8'));
       };
     };
 
