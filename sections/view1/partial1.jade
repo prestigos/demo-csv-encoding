@@ -1,0 +1,14 @@
+.page-header
+  h1 Demo de importar CSV, con conversión de encoding.
+
+.row
+  .col-md-3
+    p Seleccionar archivo CSV
+    input(type="file", data-ng-file-select="onFileSelect($files)", data-ng-multiple='true', multiple='true', accept='*.webarchive')
+  .col-md-9
+    .bs-component(data-ng-show='!!content.length')
+      .panel.panel-primary
+        .panel-heading
+          h3.panel-title Datos del CSV
+        #json-data.panel-body
+          pre {{ content }}

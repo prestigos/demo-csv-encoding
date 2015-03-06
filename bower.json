@@ -1,0 +1,24 @@
+{
+  "name": "demo-csv",
+  "version": "0.0.0",
+  "main": "index.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "bootstrap": "~3.1.0",
+    "angular-bootstrap": "~0.10.0",
+    "angular": "~1.3.8",
+    "angular-resource": "~1.3.8",
+    "angular-route": "~1.3.8",
+    "ng-file-upload": "~3.1.2"
+  },
+  "resolutions": {
+    "angular": "~1.3.8"
+  }
+}

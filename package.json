@@ -1,0 +1,73 @@
+{
+  "name": "demo-csv",
+  "version": "0.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "baconjs": "^0.7.53",
+    "body-parser": "^1.4.3",
+    "browserify": "~3.28.1",
+    "browserify-shim": "^3.3.1",
+    "compression": "^1.0.8",
+    "di": "0.0.1",
+    "express": "^4.5.1",
+    "express-less": "0.0.6",
+    "jade": "~0.31.2",
+    "method-override": "^2.3.0",
+    "morgan": "^1.1.1",
+    "transformify": "~0.1.2"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.js",
+    "angular": "./bower_components/angular/angular.js",
+    "bootstrap": "./bower_components/bootstrap/dist/js/bootstrap.js",
+    "ng-file-upload": "./bower_components/ng-file-upload/angular-file-upload.js",
+    "ng-file-upload-shim": "./bower_components/ng-file-upload/angular-file-upload-shim.js",
+    "angular-resource": "./bower_components/angular-resource/angular-resource.js",
+    "angular-route": "./bower_components/angular-route/angular-route.js",
+    "angular-bootstrap": "./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "angular": {
+      "exports": "angular",
+      "depends": [
+        "jquery:$"
+      ]
+    },
+    "angular-bootstrap": {
+      "depends": [
+        "angular:angular"
+      ]
+    },
+    "angular-resource": {
+      "depends": [
+        "angular:angular"
+      ]
+    },
+    "angular-route": {
+      "depends": [
+        "angular:angular"
+      ]
+    },
+    "ng-file-upload": {
+      "depends": [
+        "angular:angular"
+      ]
+    },
+    "bootstrap": {
+      "depends": [
+        "jquery:$"
+      ]
+    }
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-jslint": "^1.1.12",
+    "grunt-browserify": "^3.0.1",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-clean": "^0.5.0"
+  }
+}
