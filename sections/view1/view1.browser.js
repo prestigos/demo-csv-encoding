@@ -2,6 +2,7 @@
 /*global FileReader, document*/
 'use strict';
 var Bacon = require('baconjs').Bacon,
+  csv = require('csv-string'),
   encoding = require("legacy-encoding");
 
 function someCtrl($scope, $http) {
@@ -30,7 +31,7 @@ function someCtrl($scope, $http) {
         var resultBuffer;
 
         resultBuffer = encoding.encode(x.target.result, 'utf-8');
-        contenido = contenido.concat(resultBuffer.toString('utf-8'));
+        contenido = contenido.concat(csv.parse(resultBuffer.toString('utf-8')));
       };
     };
 
