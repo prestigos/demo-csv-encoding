@@ -5,6 +5,8 @@
   .col-md-3
     p Seleccionar archivo CSV
     input(type="file", data-ng-file-select="onFileSelect($files)", data-ng-multiple='true', multiple='true', accept='*.webarchive')
+    div(data-ng-show="!!content.length")
+      button.btn.btn-wide.btn-success.mrm(type='submit', data-ng-click='send()') Envia a node
   .col-md-9
     .bs-component(data-ng-show='!!content.length')
       .panel.panel-primary

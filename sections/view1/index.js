@@ -3,9 +3,10 @@
 
 module.exports = function (server) {
   /*jslint unparam:true*/
-  server.get('/view1/api', function (req, res) {
-    res.json({
-      name: 'Bob'
+  server.post('/view1/api', function (req, res) {
+    console.log(req.body);
+    res.status(201).json(201, {
+      done: true
     });
   });
   /*jslint unparam:false*/

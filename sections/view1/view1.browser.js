@@ -9,12 +9,26 @@ function someCtrl($scope, $http) {
   var scope = $scope;
 
   $scope.send = function () {
+    var datos = scope.content;
+
+    scope.content = [];
+    scope.exito = false;
+
+    if (scope.timeOut !== false) {
+      clearTimeout(scope.timeOut);
+      scope.timeOut = false;
+    }
     $http({
-      data    : $scope.ask,
+      data    : datos,
       method  : 'POST',
       url     : '/view1/api'
-    }).success(function () {
-      return;
+    }).success(function (res) {
+      scope.datos = false;
+      scope.working = false;
+
+      if (res.done === true) {
+        scope.exito = true;
+      }
     });
   };
 
